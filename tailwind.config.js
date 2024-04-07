@@ -8,6 +8,15 @@ export default {
     extend: {
       animation:{
         'spin-slow': 'spin 4s 4s linear infinite',
+      },
+
+      colors:{
+        accent:"#179957",
+        accentDark:"#184D47"
+      },
+      container:{
+        center:true,
+        padding:"15px"
       }
     },
   },

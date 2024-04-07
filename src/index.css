@@ -18,3 +18,9 @@ text-rendering: optimizeLegibility;
 -moz-osx-font-smoothing: grayscale;
 -webkit-text-size-adjust: 100%;
 }
+
+@layer components{
+   .icon_wrapper{
+     @apply border border-gray-400 rounded-full w-[55px] grid place-items-center text-[25px]
+   }
+}

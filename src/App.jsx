@@ -2,7 +2,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/footer";
 import { motion } from "framer-motion";
 import React from 'react';
-
+import Homepage_navbar from "./components/homepage_navbar";
 const App = () => {
   const titleAnimation = {
     hidden:{
@@ -49,7 +49,7 @@ const App = () => {
     },
     show:{
       clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
-      transition:{
+        transition:{
         delay:2.3,
         duration:0.5,
         ease:'easeInOut'
@@ -62,7 +62,7 @@ const App = () => {
       clipPath: "polygon(0 0, 100% 0,100% 0, 0 0)"
     },
     show:{
-      opacity: 0.2,
+      opacity: 0.4,
       zIndex:-1,
       clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
       transition:{
@@ -112,17 +112,39 @@ const App = () => {
         <motion.img src="/images/bg_remove.png" alt="Your Image" className="object-cover absolute right-24 top-0 h-[550px]" variants={imgAnimation} initial="hidden" animate="show" />
         
         <motion.div className="bg-[#aed334] p-10 w-[1020px] h-[480px] absolute bottom-[100px] left-[200px] drop-shadow-lg z-50 rounded mt-4" variants={opaqueAnimation} initial="hidden" animate="show">
+    
         </motion.div>
-        
-
+        <motion.div className="p-4 w-[400px] absolute top-[150px] left-[200px]  absolute drop-shadow-lg z-50" variants={explainAnimation} initial="hidden" animate="show">
+          <p className="text-[black] text-sm text-justify">
+            THE MARKETPLACE APP FOR LOCAL FOOD & FARMS
+            to buy homegrown produce, backyard chicken eggs, honey, plants, trees, garden supplies, and more.
+          </p>
+          <br>
+          </br>
+          <p className="text-[black] text-sm text-justify">
+            Boudha Farmers Market has been managing the market since 2018 in Utpala Cafe in Boudha. As organic food are high in demand of organic products in Nepal we understood that we need a local marketplace where the farmers can directly market their production.</p>
+          </motion.div>
 
         {/* Shop Now Button */}
         <motion.button 
-  className="bg-white hover:bg-green-300 text-[(72,60,70)] font-bold py-2 px-4 rounded mt-4 absolute bottom-[150px] left-[290px] z-50" 
-  variants={explainAnimation} 
-  initial="hidden" 
+  className="bg-[orange] text-[(72,60,70)] font-bold py-2 px-4 rounded mt-4 absolute bottom-[150px] left-[250px] z-50"
+  variants={explainAnimation}
+  initial="hidden"
   animate="show"
-  style={{ backgroundColor: 'orange' }} // Set background color before hovering
+  whileHover={{ backgroundColor: 'transparent',border:'2px solid orange', color: '#333' }}
+ 
+>
+  Shop Now
+</motion.button>
+
+
+<motion.button 
+  className="bg-[white]text-[(72,60,70)] font-bold py-2 px-4 rounded mt-4 absolute bottom-[150px] left-[390px] z-50"
+  variants={explainAnimation}
+  initial="hidden"
+  animate="show"
+  whileHover={{ backgroundColor: 'orange', color: '#333' }}
+  style={{ border: '2px solid orange' }}
 >
   Shop Now
 </motion.button>
@@ -134,5 +156,9 @@ const App = () => {
     </div>
   );
 }
+
+ {/* Homepage Navbar */}
+<Homepage_navbar />
+   
 
 export default App;
